@@ -1,0 +1,25 @@
+{
+  "name": "payment-dashboard-server",
+  "version": "1.0.0",
+  "description": "The dedicated backend for payment-dashboard-client app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "thanujaDev26"
+  },
+  "author": "Thanuja Priyadarshane",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^1.7.2",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "nodemon": "^3.1.3"
+  }
+}
