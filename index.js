@@ -13,8 +13,9 @@ app.use(cors());
 
 app.post('/check-balance', async (req, res) => {
     const  accountNumber  = req.body.leco;
+    let name = req.body.name;
     console.log(accountNumber);
-
+    console.log(name);
     const url = "https://lecoapp.leco.lk/OnlineBillPay/Instant_Pay.aspx";
     const payload = `ctl00%24MainContent%24ScriptManager1=ctl00%24MainContent%24UpdatePanel1%7Cctl00%24MainContent%24BtnCheck1&__EVENTTARGET=&__EVENTARGUMENT=&__LASTFOCUS=&__VIEWSTATE=olz9nJfxWGSERICJdnlZT%2BYx4cmsdakwij7DR9BrcjLGd10t87KTeVgC2K7QBwlTuxIIYMaFiTE2OwoY1Z5lwpnKzaN273Pbnvc4eD1vqM8MIbG0YLiNE2g%2FgH%2FlwOTkvQQz8TkUWazqWrfzV1grmqkwZz6510OnW%2BSgNdXlRWZ%2BMGuGonL4ujIhweoAP7t3JepeO3O2fBwe08ECH785i3npDvWiAwzb9UmFwJkaa%2BQR20N8pELh9nSQXkjVOxafOc2uUQa1YPlq8Pd%2BN6fCrg%3D%3D&__VIEWSTATEGENERATOR=57BE4788&__EVENTVALIDATION=xi5%2FxRYJ7uZwE9b42x6M8tCzVKtG9qP8DuPHIhYwkjDPoswb4meJ0mjlIWGa0XcLPM9mVdmYqf3WiKaZPYTf61XKU3B4666Tg1i1s1sflVYN80acbikVRTIFBz3It7GpmMvnqtn7O35PmWXaHRYdSJusOaG4oZD1N0iPg7Yv5HPIDevJ%2FlHITULFytUh14EzyupOblcorpAlmC0nlrvQO5h9zIVIGpWFhjgLOgipZg495VojWQbcx7Rkr9UmNPmAvR%2Fv0b03KcIQCwm8ADA%2Bl3WchPfNrRhbAGXhcrvkHMdsKYuljgpKK8iTPGOnDWou&ctl00%24MainContent%24TxtAccount_number=${accountNumber}&ctl00%24MainContent%24TxtfAmount=&ctl00%24MainContent%24TxtvMobile=&ctl00%24MainContent%24TxtEmail=&paymentdate=&__ASYNCPOST=true&ctl00%24MainContent%24BtnCheck1=Submit`;
     const headers = {
@@ -38,6 +39,7 @@ app.post('/check-balance', async (req, res) => {
         res.json({
             status: 'success',
             balance: balance,
+            name : name
         });
     } catch (error) {
         console.error('Error fetching the account balance:', error);
