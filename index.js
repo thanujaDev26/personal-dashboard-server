@@ -11,6 +11,8 @@ app.use(cors());
 
 app.use('/leco', require('./routes/LecoRoutes'));
 
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-});
+// app.listen(port, () => {
+//     console.log(`Server running on http://localhost:${port}`);
+// });
+
+module.exports = serverless(app);
