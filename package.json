@@ -13,12 +13,13 @@
   "author": "Thanuja Priyadarshane",
   "license": "ISC",
   "devDependencies": {
-    "axios": "^1.7.2",
-    "express": "^4.19.2",
+    "axios": "^1.13.2",
+    "express": "^4.21.2",
     "mongoose": "^8.4.1"
   },
   "dependencies": {
-    "body-parser": "^1.20.2",
+    "body-parser": "^1.20.3",
+    "cheerio": "^1.1.2",
     "cors": "^2.8.5",
     "nodemon": "^3.1.3"
   }
